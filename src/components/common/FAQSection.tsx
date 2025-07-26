@@ -56,7 +56,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-indigo-50 dark:bg-slate-950 py-16 px-4">
+    <section id="faq" className="w-full bg-indigo-50 dark:bg-slate-950 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">

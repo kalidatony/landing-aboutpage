@@ -28,6 +28,9 @@ export default function Navbar({
     { label: "Home", href: "/" },
     { label: "About", href: "#about" },
     { label: "Features", href: "#features" },
+    { label: "Developer & Support", href: "#developer-support" },
+    { label: "Integration Partners", href: "#integration-partners" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
@@ -89,13 +92,13 @@ export default function Navbar({
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between relative">
-          {/* Logo and Brand (flex-1 to push right content) */}
-          <div className="flex items-center space-x-3 flex-1 min-w-0">
+          {/* Logo and Brand (left) */}
+          <div className="flex items-center space-x-3 min-w-0">
             <img src="/Icon.png" alt="Logo" className="w-10 h-10 rounded-lg flex-shrink-0" />
             <div className="font-display font-bold text-2xl gradient-text truncate">TokenRadar Labs</div>
           </div>
-          {/* Nav Links (hidden on mobile) */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Nav Links (centered) */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {links.map((link) => (
               link.href.startsWith('#') ? (
                 <button
@@ -117,34 +120,8 @@ export default function Navbar({
               )
             ))}
           </div>
-
-          {/* Right side: nav links (desktop), actions, hamburger (mobile) */}
-          <div className="flex items-center space-x-4">
-            {/* Nav Links (hidden on mobile) */}
-            <div className="hidden md:flex items-center space-x-8">
-              {links.map((link) => (
-                link.href.startsWith('#') ? (
-                  <button
-                    key={link.label}
-                    className="text-white hover:text-blue-400 transition-colors cursor-pointer"
-                    type="button"
-                    onClick={() => handleNavClick(link.href)}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="text-white hover:text-blue-400 transition-colors cursor-pointer"
-                  >
-                    {link.label}
-                  </Link>
-                )
-              ))}
-            </div>
-
-            {/* Actions: Theme toggle & CTA */}
+          {/* Actions: Theme toggle, CTA, Hamburger (right) */}
+          <div className="flex items-center space-x-4 ml-auto">
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center text-white gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-blue-400 h-10 w-10 rounded-full hover:bg-white/10 cursor-pointer"
@@ -173,8 +150,6 @@ export default function Navbar({
             >
               Get Started
             </CustomButton>
-
-            {/* Hamburger menu button (mobile only) */}
             <button
               className="md:hidden flex items-center justify-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
               onClick={() => setMobileMenuOpen((open) => !open)}

@@ -21,7 +21,7 @@ const IntegrationPartners = () => {
   ];
 
   return (
-    <section className="py-16 container mx-auto px-4 bg-white dark:bg-[#0A0F23]">
+    <section id="integration-partners" className="py-16 container mx-auto px-4 bg-white dark:bg-[#0A0F23]">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">

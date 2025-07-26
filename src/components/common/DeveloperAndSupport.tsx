@@ -2,7 +2,7 @@ import React from 'react';
 
 const DeveloperAndSupport = () => {
   return (
-    <section className="py-16 bg-white dark:bg-zinc-950">
+    <section id="developer-support" className="py-16 bg-white dark:bg-zinc-950">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
